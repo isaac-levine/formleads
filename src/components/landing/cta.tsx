@@ -24,7 +24,6 @@ const formSchema = z.object({
 });
 
 export function CTA() {
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,21 +31,18 @@ export function CTA() {
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values);
   }
 
   return (
     <Section>
       <Container className="flex flex-col items-center gap-6 text-center">
-        <h2 className="!my-0">Lorem ipsum dolor sit amet!</h2>
+        <h2 className="!my-0">Get Started with formleads.ai Today!</h2>
         <p className="text-lg opacity-70 md:text-2xl">
           <Balancer>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Sign up now to create beautiful, conversion-focused forms and
+            landing pages for your real estate business.
           </Balancer>
         </p>
         <Form {...form}>

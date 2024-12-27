@@ -3,39 +3,35 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { ArrowRight } from "lucide-react";
 
-// UI Components
-import { Button } from "@/components/ui/button";
-
 // Custom Components
 import { Section, Container } from "@/components/craft";
 
 // Assets
 import Placeholder from "../../public/placeholder.jpg";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 export default function Hero() {
   return (
     <Section>
       <Container>
-        <div className="flex flex-col items-center text-center">
-          <Button
-            asChild
-            className="not-prose mb-6 flex w-fit"
-            size="sm"
-            variant="outline"
-          >
-            <Link href="https://9d8.dev">
-              Lorem ipsum dolor sit amet <ArrowRight className="ml-2 w-4" />
+        <div className="flex flex-col items-center text-center no-underline">
+          <HoverBorderGradient>
+            <Link
+              className="no-underline flex items-center"
+              href="/get-started"
+            >
+              Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </Button>
-          <h1 className="!mb-0">
+          </HoverBorderGradient>
+          <h1 className="mt-4 !mb-0">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              Text automation for realtors that actually converts.
             </Balancer>
           </h1>
-          <h3 className="text-muted-foreground">
+          <h3 className="mt-4 text-muted-foreground">
             <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Create beautiful, conversion-focused forms and landing pages
+              without any technical knowledge.
             </Balancer>
           </h3>
           <div className="my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">

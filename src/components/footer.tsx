@@ -1,14 +1,7 @@
-// React and Next.js imports
 import Image from "next/image";
 import Link from "next/link";
-
-// Third-party library imports
 import Balancer from "react-wrap-balancer";
-
-// Local component imports
 import { Section, Container } from "./craft";
-
-// Asset imports
 import Logo from "../../public/logo.svg";
 
 export default function Footer() {
@@ -18,25 +11,24 @@ export default function Footer() {
         <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="grid gap-6">
             <Link href="/">
-              <h3 className="sr-only">brijr/components</h3>
+              <h3 className="sr-only">formleads.ai</h3>
               <Image
                 src={Logo}
                 alt="Logo"
                 width={120}
                 height={27.27}
                 className="transition-all hover:opacity-75 dark:invert"
-              ></Image>
+              />
             </Link>
             <p>
               <Balancer>
-                brijr/components is a collection of Next.js, React, Typescript
-                components for building landing pages and websites.
+                formleads.ai is a user-friendly form builder specifically
+                designed for real estate agents to capture and nurture leads.
               </Balancer>
             </p>
             <p className="text-muted-foreground">
-              ©{" "}
-              <a href="https://github.com/brijr/components">brijr/components</a>
-              . All rights reserved. 2024-present.
+              © <a href="https://formleads.ai">formleads.ai</a>. All rights
+              reserved. 2024-present.
             </p>
           </div>
           <div className="flex flex-col gap-2">
