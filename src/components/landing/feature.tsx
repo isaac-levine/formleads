@@ -57,7 +57,7 @@ const Feature = () => {
           </h3>
           <h4 className="text-2xl font-light opacity-70">
             <Balancer>
-              Discover the powerful features that make formleads.ai the ultimate
+              Discover the powerful features that make frontstep.ai the ultimate
               tool for real estate agents.
             </Balancer>
           </h4>

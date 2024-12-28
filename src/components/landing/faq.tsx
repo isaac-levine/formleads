@@ -16,9 +16,9 @@ type FAQItem = {
 
 const content: FAQItem[] = [
   {
-    question: "What is formleads.ai?",
+    question: "What is frontstep.ai?",
     answer:
-      "formleads.ai is a user-friendly form builder specifically designed for real estate agents to capture and nurture leads.",
+      "frontstep.ai is a user-friendly form builder specifically designed for real estate agents to capture and nurture leads.",
   },
   {
     question: "How does the drag-and-drop builder work?",
@@ -26,12 +26,12 @@ const content: FAQItem[] = [
       "Our intuitive drag-and-drop builder allows you to create beautiful, conversion-focused forms without any technical knowledge.",
   },
   {
-    question: "Can I integrate formleads.ai with my CRM?",
+    question: "Can I integrate frontstep.ai with my CRM?",
     answer:
-      "Yes, formleads.ai seamlessly integrates with popular real estate CRMs to keep your leads organized and accessible.",
+      "Yes, frontstep.ai seamlessly integrates with popular real estate CRMs to keep your leads organized and accessible.",
   },
   {
-    question: "Is formleads.ai mobile-responsive?",
+    question: "Is frontstep.ai mobile-responsive?",
     answer:
       "Absolutely! Our forms are designed to look great on any device, ensuring a seamless experience for your clients.",
   },

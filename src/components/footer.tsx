@@ -11,7 +11,7 @@ export default function Footer() {
         <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="grid gap-6">
             <Link href="/">
-              <h3 className="sr-only">formleads.ai</h3>
+              <h3 className="sr-only">frontstep.ai</h3>
               <Image
                 src={Logo}
                 alt="Logo"
@@ -22,12 +22,12 @@ export default function Footer() {
             </Link>
             <p>
               <Balancer>
-                formleads.ai is a user-friendly form builder specifically
+                frontstep.ai is a user-friendly form builder specifically
                 designed for real estate agents to capture and nurture leads.
               </Balancer>
             </p>
             <p className="text-muted-foreground">
-              © <a href="https://formleads.ai">formleads.ai</a>. All rights
+              © <a href="https://frontstep.ai">frontstep.ai</a>. All rights
               reserved. 2024-present.
             </p>
           </div>

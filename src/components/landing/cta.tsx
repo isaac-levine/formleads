@@ -38,7 +38,7 @@ export function CTA() {
   return (
     <Section>
       <Container className="flex flex-col items-center gap-6 text-center">
-        <h2 className="!my-0">Get Started with formleads.ai Today!</h2>
+        <h2 className="!my-0">Get Started with frontstep.ai Today!</h2>
         <p className="text-lg opacity-70 md:text-2xl">
           <Balancer>
             Sign up now to create beautiful, conversion-focused forms and

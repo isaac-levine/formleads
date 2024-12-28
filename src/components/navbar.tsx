@@ -30,7 +30,7 @@ export function NavBar() {
           </SheetTrigger>
           <SheetContent side="left">
             <SheetHeader>
-              <SheetTitle>formleads.ai</SheetTitle>
+              <SheetTitle>frontstep.ai</SheetTitle>
               <SheetDescription>
                 Scale and launch products with expert developers, on-demand, at
                 a flat monthly fee
@@ -79,7 +79,7 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList className="max-[825px]:hidden ">
             <Link href="/" className="pl-2">
-              <h1 className="font-bold">formleads.ai</h1>
+              <h1 className="font-bold">frontstep.ai</h1>
             </Link>
           </NavigationMenuList>
         </NavigationMenu>
