@@ -20,10 +20,16 @@ import {
 } from "./ui/sheet";
 import { ModeToggle } from "./mode-toggle";
 
+const links = [
+  { name: "About", href: "/about" },
+  { name: "Join", href: "/join" },
+];
+
 export function NavBar() {
   return (
     <div className="flex items-center min-w-full w-full fixed justify-center p-2 z-[50] mt-[1rem]">
       <div className="flex justify-between md:w-[720px] w-[95%] border dark:border-zinc-900 dark:bg-black bg-opacity-10 relative backdrop-filter backdrop-blur-lg bg-white border-white border-opacity-20 rounded-xl p-2 shadow-lg">
+        {/* Mobile menu */}
         <Dialog>
           <SheetTrigger className="min-[825px]:hidden p-2 transition">
             <MenuIcon />
@@ -44,38 +50,22 @@ export function NavBar() {
                   </Button>
                 </Link>
               </DialogClose>
-              <DialogClose asChild>
-                <Link href="/software">
-                  <Button variant="outline" className="w-full">
-                    Software
-                  </Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/automation">
-                  <Button variant="outline" className="w-full">
-                    Automation
-                  </Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/blog">
-                  <Button variant="outline" className="w-full">
-                    Blog
-                  </Button>
-                </Link>
-              </DialogClose>
-              <DialogClose asChild>
-                <Link href="/projects">
-                  <Button variant="outline" className="w-full">
-                    Projects
-                  </Button>
-                </Link>
-              </DialogClose>
+              {links.map((link) => (
+                <DialogClose asChild key={link.href}>
+                  <Link href={link.href}>
+                    <Button variant="outline" className="w-full">
+                      {link.name}
+                    </Button>
+                  </Link>
+                </DialogClose>
+              ))}
               <ModeToggle />
             </div>
           </SheetContent>
         </Dialog>
+        {/* END mobile menu */}
+
+        {/* Desktop menu */}
         <NavigationMenu>
           <NavigationMenuList className="max-[825px]:hidden ">
             <Link href="/" className="pl-2">
@@ -84,19 +74,13 @@ export function NavBar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center gap-2 max-[825px]:hidden">
-          <Link href="/software">
-            <Button variant="ghost">Software</Button>
-          </Link>
-          <Link href="/automation">
-            <Button variant="ghost">Automation</Button>
-          </Link>
-          <Link href="/blog">
-            <Button variant="ghost">Blog</Button>
-          </Link>
-          <Link href="/projects">
-            <Button variant="ghost">Projects</Button>
-          </Link>
+          {links.map((link) => (
+            <Link href={link.href} key={link.href}>
+              <Button variant="ghost">{link.name}</Button>
+            </Link>
+          ))}
           <ModeToggle />
+          {/* END desktop menu */}
         </div>
       </div>
     </div>
