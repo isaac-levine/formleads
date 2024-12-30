@@ -9,7 +9,7 @@ import FAQ from "@/components/landing/faq";
 // import Header from "@/components/landing/header";
 import Hero6 from "@/components/landing/hero6";
 import Features from "@/components/landing/features";
-import { TypewriterEffectSmoothDemo } from "@/components/landing/TypewriterEffectSmoothDemo";
+// import { TypewriterEffectSmoothDemo } from "@/components/landing/TypewriterEffectSmoothDemo";
 // import Pricing from "@/components/landing/pricing";
 // import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Main className="pt-12">
-        <TypewriterEffectSmoothDemo />
+        {/* <TypewriterEffectSmoothDemo /> */}
         {/* <Hero /> */}
         <Hero2 />
         {/* <AnimatedTooltip items={[]} /> */}

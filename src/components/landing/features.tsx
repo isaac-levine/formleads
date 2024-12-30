@@ -17,21 +17,21 @@ type FeatureText = {
 const featureText: FeatureText[] = [
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Always-On Lead Capture",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Your leads are instantly greeted by natural-sounding AI that qualifies interest and books appointments. Never miss another opportunity, day or night, and seamlessly hand off qualified leads to your team.",
   },
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Smart Text Nurturing",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Automated follow-up that feels personal, with intelligent qualification and instant responses to missed calls. Our AI learns what properties interest each lead and keeps them engaged.",
   },
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Tailored Neighborhood Reports",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Instantly generate tailored market intelligence reports based on each lead's preferences and interests. Deliver beautiful, data-rich PDFs covering schools, trends, and local insights within seconds of receiving a new lead.",
   },
 ];
 
@@ -42,13 +42,11 @@ const Feature = () => {
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Balancer>
+            <Balancer>Modern Lead Response, Powered by AI</Balancer>
           </h3>
           <h4 className="text-2xl font-light opacity-70">
             <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+              Convert more leads with intelligent automation that never sleeps
             </Balancer>
           </h4>
 

@@ -38,11 +38,13 @@ export function CTA() {
   return (
     <Section>
       <Container className="flex flex-col items-center gap-6 text-center">
-        <h2 className="!my-0">Get Started with frontstep.ai Today!</h2>
+        <h2 className="!my-0">Revolutionize Your Lead Response with AI</h2>
         <p className="text-lg opacity-70 md:text-2xl">
           <Balancer>
-            Sign up now to create beautiful, conversion-focused forms and
-            landing pages for your real estate business.
+            Join the beta program and be among the first real estate teams to
+            experience the future of lead conversion. Get 24/7 AI-powered
+            response, intelligent follow-up, and custom market reports that help
+            you close more deals.
           </Balancer>
         </p>
         <Form {...form}>

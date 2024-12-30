@@ -16,24 +16,24 @@ type FAQItem = {
 
 const content: FAQItem[] = [
   {
-    question: "What is frontstep.ai?",
+    question: "What exactly does frontstep.ai do?",
     answer:
-      "frontstep.ai is a user-friendly form builder specifically designed for real estate agents to capture and nurture leads.",
+      "frontstep.ai provides AI-powered lead response services for real estate teams. We handle 24/7 phone calls, text follow-up, and automated reporting so you never miss an opportunity to connect with potential clients.",
   },
   {
-    question: "How does the drag-and-drop builder work?",
+    question: "How does the AI phone system work?",
     answer:
-      "Our intuitive drag-and-drop builder allows you to create beautiful, conversion-focused forms without any technical knowledge.",
+      "Our AI answers calls instantly in natural conversation, qualifying leads and booking appointments. The system understands your listings and market, and seamlessly hands off qualified leads to your team with full conversation context.",
   },
   {
-    question: "Can I integrate frontstep.ai with my CRM?",
+    question: "Can I integrate this with my existing CRM and tools?",
     answer:
-      "Yes, frontstep.ai seamlessly integrates with popular real estate CRMs to keep your leads organized and accessible.",
+      "Yes! We integrate with all major real estate CRMs and tools. Our team handles the entire setup process, configuring the integrations to work with your existing workflow.",
   },
   {
-    question: "Is frontstep.ai mobile-responsive?",
+    question: "What makes frontstep.ai different from other AI solutions?",
     answer:
-      "Absolutely! Our forms are designed to look great on any device, ensuring a seamless experience for your clients.",
+      "Unlike generic AI tools, we're built specifically for real estate. Our AI understands property details, market trends, and the nuances of real estate conversations. Plus, we offer full-service setup and management - no technical expertise required.",
   },
 ];
 
