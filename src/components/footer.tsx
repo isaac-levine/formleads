@@ -28,7 +28,7 @@ export default function Footer() {
             </p>
             <p className="text-muted-foreground">
               © <a href="https://frontstep.ai">frontstep.ai</a>. All rights
-              reserved. 2024-present.
+              reserved.
             </p>
           </div>
           <div className="flex flex-col gap-2">
