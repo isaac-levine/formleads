@@ -7,7 +7,7 @@ import Logo from "../../public/logo.svg";
 export default function Footer() {
   return (
     <footer>
-      <Section>
+      <Section className="border-t mt-12">
         <Container className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="grid gap-6">
             <Link href="/">
