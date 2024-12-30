@@ -42,10 +42,10 @@ const FAQ = () => {
     <Section>
       <Container>
         <h3 className="!mt-0">Frequently Asked Questions</h3>
-        <h4 className="text-muted-foreground">
+        {/* <h4 className="text-muted-foreground">
           Can&apos;t find the answer you&apos;re looking for? Reach out to our
           customer support team.
-        </h4>
+        </h4> */}
         <div className="not-prose mt-4 flex flex-col gap-4 md:mt-8">
           {content.map((item, index) => (
             <Accordion key={index} type="single" collapsible>
