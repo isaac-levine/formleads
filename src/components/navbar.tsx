@@ -19,11 +19,15 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { ModeToggle } from "./mode-toggle";
+import {
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
 
-const links = [
-  { name: "About", href: "/about" },
-  { name: "Join", href: "/join" },
-];
+const links = [{ name: "Dashboard", href: "/dashboard" }];
 
 export function NavBar() {
   return (
@@ -50,15 +54,29 @@ export function NavBar() {
                   </Button>
                 </Link>
               </DialogClose>
-              {links.map((link) => (
-                <DialogClose asChild key={link.href}>
-                  <Link href={link.href}>
-                    <Button variant="outline" className="w-full">
-                      {link.name}
-                    </Button>
-                  </Link>
-                </DialogClose>
-              ))}
+              <SignedIn>
+                {links.map((link) => (
+                  <DialogClose asChild key={link.href}>
+                    <Link href={link.href}>
+                      <Button variant="outline" className="w-full">
+                        {link.name}
+                      </Button>
+                    </Link>
+                  </DialogClose>
+                ))}
+              </SignedIn>
+              <SignedOut>
+                <SignInButton>
+                  <Button variant="outline" className="w-full">
+                    Sign in
+                  </Button>
+                </SignInButton>
+                <SignUpButton>
+                  <Button variant="outline" className="w-full">
+                    Sign up
+                  </Button>
+                </SignUpButton>
+              </SignedOut>
               <ModeToggle />
             </div>
           </SheetContent>
@@ -74,11 +92,22 @@ export function NavBar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center gap-2 max-[825px]:hidden">
-          {links.map((link) => (
-            <Link href={link.href} key={link.href}>
-              <Button variant="ghost">{link.name}</Button>
-            </Link>
-          ))}
+          <SignedIn>
+            {links.map((link) => (
+              <Link href={link.href} key={link.href}>
+                <Button variant="ghost">{link.name}</Button>
+              </Link>
+            ))}
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button variant="ghost">Sign in</Button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <Button variant="ghost">Sign up</Button>
+            </SignUpButton>
+          </SignedOut>
           <ModeToggle />
           {/* END desktop menu */}
         </div>
