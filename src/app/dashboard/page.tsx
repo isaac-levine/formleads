@@ -5,11 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { openAIClient } from "@/lib/openai";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Dashboard() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<{ to: string; text: string }[]>([]);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const { toast } = useToast();
 
   const handleSendMessage = async () => {
     // TODO: Implement actual SMS sending
@@ -18,10 +22,34 @@ export default function Dashboard() {
   };
 
   const handleGenerateAI = async () => {
-    // TODO: Implement AI generation
-    const aiResponse =
-      "This is a sample AI response. Replace with actual AI integration.";
-    setMessage(aiResponse);
+    try {
+      setIsGenerating(true);
+
+      const response = await openAIClient.generateChatCompletion([
+        {
+          role: "system",
+          content:
+            "You are a helpful assistant that generates professional and friendly SMS messages. Keep the messages concise and under 160 characters when possible.",
+        },
+        {
+          role: "user",
+          content: `Generate a professional SMS message for phone number ${phoneNumber}. If there's a previous message, use it as context: ${message}`,
+        },
+      ]);
+
+      if (response.content) {
+        setMessage(response.content);
+      }
+    } catch (error) {
+      console.error("Error generating AI response:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to generate AI response. Please try again.",
+      });
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
@@ -54,10 +82,19 @@ export default function Dashboard() {
               />
             </div>
             <div className="flex gap-2">
-              <Button onClick={handleGenerateAI} variant="outline">
-                Generate AI Response
+              <Button
+                onClick={handleGenerateAI}
+                variant="outline"
+                disabled={isGenerating || !phoneNumber}
+              >
+                {isGenerating ? "Generating..." : "Generate AI Response"}
               </Button>
-              <Button onClick={handleSendMessage}>Send Message</Button>
+              <Button
+                onClick={handleSendMessage}
+                disabled={!message || !phoneNumber}
+              >
+                Send Message
+              </Button>
             </div>
           </CardContent>
         </Card>
