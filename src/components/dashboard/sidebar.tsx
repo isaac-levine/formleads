@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
+import { useUser } from "@clerk/nextjs";
 
 const routes = [
   {
@@ -38,6 +39,7 @@ export function DashboardSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { user, isLoaded } = useUser();
 
   // Handle window resize
   useEffect(() => {
@@ -110,11 +112,22 @@ export function DashboardSidebar() {
                 },
               }}
             />
-            <div className="flex flex-col">
-              <span className="text-sm font-medium">Account</span>
-              <span className="text-xs text-muted-foreground">
-                Manage your account
-              </span>
+            <div className="flex flex-col truncate">
+              {isLoaded ? (
+                <>
+                  <span className="text-sm font-medium truncate">
+                    {user?.firstName} {user?.lastName}
+                  </span>
+                  <span className="text-xs text-muted-foreground truncate">
+                    {user?.emailAddresses[0]?.emailAddress}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <div className="h-4 w-24 bg-muted animate-pulse rounded" />
+                  <div className="h-3 w-32 bg-muted animate-pulse rounded mt-1" />
+                </>
+              )}
             </div>
           </div>
           <ModeToggle />
