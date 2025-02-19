@@ -6,11 +6,14 @@ import FAQ from "@/components/landing/faq";
 import Hero6 from "@/components/landing/hero6";
 import Features from "@/components/landing/features";
 import Hero from "@/components/hero";
+import { NavBar } from "@/components/navbar";
 
 export default function Home() {
   return (
     <>
-      <Main className="pt-12">
+      <NavBar />
+
+      <Main className="pt-24">
         <Hero />
         <Features />
         <Hero6 />
